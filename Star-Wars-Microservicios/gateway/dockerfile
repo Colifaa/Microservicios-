@@ -1,0 +1,8 @@
+// indicamos como tiene que armaar la aimgen que luego se va a levantar como si fues un contenedor;
+FROM node:16     // LE INSTALO NODE 
+WORKDIR /app           // COMANDO PARA GUARDAR LOS ARCHIVOS QUE NECESITAMOS EN APP 
+COPY package*.json ./  // le copiamos el package json.
+RUN npm install // toma todo lo del package e instala nuestro nodemodules
+COPY . .   // LOS PUNTOS SON LOS DESTINOS ES COMO HACER ./ PERO ME QUEDO EN EL PUNTO Y LUEGO COY A L OTRO PUNTO QUE SERIA IGUAL A /app
+EXPOSE 3000  // es lo que quiero exponer osea el purto 3000
+CMD ["npm" , "start"] // 
