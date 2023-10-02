@@ -7,7 +7,7 @@ app.use(morgan("dev"));
 
 app.use("/characters", createProxyMiddleware({
 
-    target: "http://localhost:3001",
+    target: "http://characters:3001",
     changueOrigin: "true"
 })
 
@@ -18,7 +18,7 @@ app.use("/characters", createProxyMiddleware({
 
 app.use("/films", createProxyMiddleware({
 
-    target: "http://localhost:3002",
+    target: "http://films:3002",
     changueOrigin: "true"
 })
 
@@ -30,7 +30,7 @@ app.use("/films", createProxyMiddleware({
 
 app.use("/planets", createProxyMiddleware({
 
-    target: "http://localhost:3003",
+    target: "http://planets:3003",
     changueOrigin: "true"
 })
 
