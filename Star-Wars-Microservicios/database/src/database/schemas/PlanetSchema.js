@@ -12,10 +12,8 @@ const PlanetSchema = new Schema( {
     terrain: String,
     surface_water: String,
     residents: [{type:String, ref: "Planet"}],
-    films: [{type:String, ref: "Films"}]
+    films: [{type:String, ref: "Film"}]
 },);
-
-module.exports = PlanetSchema;
 
 
 
@@ -23,6 +21,6 @@ PlanetSchema.statics.list = async function () {
     return await this.find()
     .populate("residents", ["_id", "name"])
     .populate("films", ["_id", "title"])
-
-
 }
+
+module.exports = PlanetSchema;

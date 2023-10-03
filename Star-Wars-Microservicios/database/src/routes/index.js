@@ -1,8 +1,8 @@
 const { Router } = require("express");
-const router = Router();
 const store = require("../database")
-
 const {validateModel} = require("../middlewares")
+const router = Router();
+
 
 router.get("/:model", validateModel, async (req, res) => {
     const { model } = req.params;

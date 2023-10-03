@@ -1,10 +1,16 @@
-const { Router } = require("express");
-const films = require("../data/films.json");
 
-const filmsRouter = Router();
+const Film = require("../data");
 
-filmsRouter.get("/", (req, res) => {
+module.exports = async (req,res) => {
+
+  const films = await Film.list();
+ 
+
   res.status(200).json(films);
-});
+};
 
-module.exports = filmsRouter;
+
+
+
+
+

@@ -14,8 +14,6 @@ app.use("/characters", createProxyMiddleware({
 );
 
 
-
-
 app.use("/films", createProxyMiddleware({
 
     target: "http://films:3002",
@@ -23,8 +21,6 @@ app.use("/films", createProxyMiddleware({
 })
 
 );
-
-
 
 
 
